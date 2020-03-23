@@ -1,0 +1,24 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: item-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=truc&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+mybatis:
+  type-aliases-package: com.test.pojo
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    com.test.dao: debug
