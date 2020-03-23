@@ -4,11 +4,8 @@ import com.test.entity.Result;
 import com.test.pojo.Item;
 import com.test.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -26,7 +23,13 @@ public class ItemController {
         // 封装并返回结果
         return new Result<>(true, "查询全部item成功", itemList);
     }
+
     // 按指定条件查询
+    @PostMapping("/listItemByCondition")
+    public Result<List<Item>> listItemByCondition(@RequestBody Item item){
+        List<Item> itemList = itemService.listItemByCondition(item);
+        return new Result<>(true, "根据条件查询item成功", itemList);
+    }
     // 增
     // 删
     // 改

@@ -18,4 +18,9 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> listItem() {
         return itemDao.listItem();
     }
+
+    @Override
+    public List<Item> listItemByCondition(Item item) {
+        return itemDao.listItemByCondition(item);
+    }
 }

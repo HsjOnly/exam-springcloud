@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ItemService {
     List<Item> listItem();
+
+    List<Item> listItemByCondition(Item item);
 }
