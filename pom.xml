@@ -6,6 +6,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>exam-eureka</module>
+        <module>exam-item</module>
+        <module>exam-api</module>
     </modules>
 
     <parent>
