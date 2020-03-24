@@ -32,4 +32,9 @@ public class ItemServiceImpl implements ItemService {
         item.setUpdated(new Date());
         itemDao.insertItem(item);
     }
+
+    @Override
+    public int deleteItemByCondition(Item item) {
+        return itemDao.deleteItemByCondition(item);
+    }
 }

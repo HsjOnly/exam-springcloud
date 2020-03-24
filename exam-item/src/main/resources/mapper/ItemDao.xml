@@ -28,5 +28,21 @@
         INSERT INTO tb_user VALUE (null, #{username}, #{password}, #{name}, #{age}, #{sex}, #{birthday}, #{note}, #{created}, #{updated})
     </insert>
 
+    <delete id="deleteItemByCondition" parameterType="item">
+        DELETE FROM tb_user
+        <where>
+            <if test="id != null"> AND id = #{id} </if>
+            <if test="username != null"> AND username = #{username} </if>
+            <if test="password != null"> AND password = #{password} </if>
+            <if test="name != null"> AND name = #{name} </if>
+            <if test="age != null"> AND age = #{age} </if>
+            <if test="sex != null"> AND sex = #{sex} </if>
+            <if test="birthday != null"> AND birthday = #{birthday} </if>
+            <if test="note != null"> AND note LIKE CONCAT('%',#{note},'%') </if>
+            <if test="created != null"> AND created = #{created} </if>
+            <if test="updated != null"> AND updated = #{updated} </if>
+        </where>
+    </delete>
+
 </mapper>
 

@@ -10,4 +10,6 @@ public interface ItemService {
     List<Item> listItemByCondition(Item item);
 
     void insertItem(Item item);
+
+    int deleteItemByCondition(Item item);
 }

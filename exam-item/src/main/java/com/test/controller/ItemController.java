@@ -37,6 +37,12 @@ public class ItemController {
         itemService.insertItem(item);
         return new Result(true, "新增item成功");
     }
+
     // 删
+    @DeleteMapping
+    public Result deleteItem(@RequestBody Item item) {
+        int count = itemService.deleteItemByCondition(item);
+        return new Result(true, "删除item成功，共删除" + count +"条记录");
+    }
     // 改
 }
