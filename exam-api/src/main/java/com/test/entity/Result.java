@@ -17,6 +17,11 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+    public Result(Boolean flag, String message) {
+        this.flag = flag;
+        this.message = message;
+    }
+
     @Override
     public String toString() {
         return "Result{" +

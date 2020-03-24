@@ -8,4 +8,6 @@ public interface ItemService {
     List<Item> listItem();
 
     List<Item> listItemByCondition(Item item);
+
+    void insertItem(Item item);
 }

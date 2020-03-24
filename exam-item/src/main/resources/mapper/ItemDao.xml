@@ -24,4 +24,9 @@
         </where>
     </select>
 
+    <insert id="insertItem" parameterType="item">
+        INSERT INTO tb_user VALUE (null, #{username}, #{password}, #{name}, #{age}, #{sex}, #{birthday}, #{note}, #{created}, #{updated})
+    </insert>
+
 </mapper>
+

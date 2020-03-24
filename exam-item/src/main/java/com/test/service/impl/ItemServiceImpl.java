@@ -6,6 +6,7 @@ import com.test.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -22,5 +23,13 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public List<Item> listItemByCondition(Item item) {
         return itemDao.listItemByCondition(item);
+    }
+
+    @Override
+    public void insertItem(Item item) {
+        item.setId(null);
+        item.setCreated(new Date());
+        item.setUpdated(new Date());
+        itemDao.insertItem(item);
     }
 }

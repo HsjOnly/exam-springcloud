@@ -17,7 +17,7 @@ public class ItemController {
 
     // 查全部
     @GetMapping
-    public Result<List<Item>> listItem(){
+    public Result<List<Item>> listItem() {
         // 调用service查询
         List<Item> itemList = itemService.listItem();
         // 封装并返回结果
@@ -26,11 +26,17 @@ public class ItemController {
 
     // 按指定条件查询
     @PostMapping("/listItemByCondition")
-    public Result<List<Item>> listItemByCondition(@RequestBody Item item){
+    public Result<List<Item>> listItemByCondition(@RequestBody Item item) {
         List<Item> itemList = itemService.listItemByCondition(item);
         return new Result<>(true, "根据条件查询item成功", itemList);
     }
+
     // 增
+    @PostMapping
+    public Result insertItem(@RequestBody Item item) {
+        itemService.insertItem(item);
+        return new Result(true, "新增item成功");
+    }
     // 删
     // 改
 }

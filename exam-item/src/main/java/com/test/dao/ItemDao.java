@@ -8,4 +8,6 @@ public interface ItemDao {
     List<Item> listItem();
 
     List<Item> listItemByCondition(Item item);
+
+    void insertItem(Item item);
 }
