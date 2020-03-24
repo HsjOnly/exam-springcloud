@@ -41,6 +41,6 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public int updateItemById(Item item) {
         item.setUpdated(new Date());
-        return itemDao.updateById(item);
+        return itemDao.updateItemById(item);
     }
 }

@@ -13,5 +13,5 @@ public interface ItemDao {
 
     int deleteItemByCondition(Item item);
 
-    int updateById(Item item);
+    int updateItemById(Item item);
 }
