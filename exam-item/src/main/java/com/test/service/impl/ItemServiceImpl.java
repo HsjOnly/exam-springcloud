@@ -37,4 +37,10 @@ public class ItemServiceImpl implements ItemService {
     public int deleteItemByCondition(Item item) {
         return itemDao.deleteItemByCondition(item);
     }
+
+    @Override
+    public int updateItemById(Item item) {
+        item.setUpdated(new Date());
+        return itemDao.updateById(item);
+    }
 }

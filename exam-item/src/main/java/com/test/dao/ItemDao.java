@@ -12,4 +12,6 @@ public interface ItemDao {
     void insertItem(Item item);
 
     int deleteItemByCondition(Item item);
+
+    int updateById(Item item);
 }

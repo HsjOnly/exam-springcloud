@@ -45,4 +45,9 @@ public class ItemController {
         return new Result(true, "删除item成功，共删除" + count +"条记录");
     }
     // 改
+    @PutMapping("/update")
+    public Result updateItemById(@RequestBody Item item) {
+        int count = itemService.updateItemById(item);
+        return new Result(true, "根据id更新item成功，共更新"+ count+"条数据");
+    }
 }

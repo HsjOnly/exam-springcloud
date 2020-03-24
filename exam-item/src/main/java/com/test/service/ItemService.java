@@ -12,4 +12,6 @@ public interface ItemService {
     void insertItem(Item item);
 
     int deleteItemByCondition(Item item);
+
+    int updateItemById(Item item);
 }

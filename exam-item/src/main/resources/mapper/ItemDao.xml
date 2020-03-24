@@ -44,5 +44,8 @@
         </where>
     </delete>
 
-</mapper>
+    <update id="updateItemById" parameterType="item">
+        UPDATE tb_user SET password = #{password}, name = #{name}, age = #{age}, sex = #{sex}, birthday = #{birthday}, note = #{note}, updated = #{updated} WHERE id = #{id}
+    </update>
 
+</mapper>
