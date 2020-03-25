@@ -8,6 +8,7 @@
         <module>exam-eureka</module>
         <module>exam-item</module>
         <module>exam-api</module>
+        <module>exam-gateway</module>
     </modules>
 
     <parent>
