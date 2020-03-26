@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<div id="app">
+    <h2>用户列表</h2>
+    <table border="1" cellpadding="1" cellspacing="0">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>帐号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>生日</td>
+            <td>备注</td>
+            <td>创建时间</td>
+            <td>更新时间</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item, index) in list">
+            <td>{{item.id}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.sex == 1? '男':'女'}}</td>
+            <td>{{item.birthday}}</td>
+            <td>{{item.note}}</td>
+            <td>{{item.created}}</td>
+            <td>{{item.updated}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/vue.js v2.6.11.js"></script>
+<script type="text/javascript" src="/axios.min.js"></script>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            list: []
+        },
+        methods: {},
+        created() {
+            axios.get("http://127.0.0.1:7000/api/item")
+                .then((res) => {
+                    this.list = res.data.data;
+                })
+        }
+    })
+</script>

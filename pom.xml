@@ -9,6 +9,7 @@
         <module>exam-item</module>
         <module>exam-api</module>
         <module>exam-gateway</module>
+        <module>exam-page</module>
     </modules>
 
     <parent>
