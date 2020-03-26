@@ -28,10 +28,10 @@
             <td>{{item.name}}</td>
             <td>{{item.age}}</td>
             <td>{{item.sex == 1? '男':'女'}}</td>
-            <td>{{item.birthday}}</td>
+            <td>{{item.birthday | ellipsis }}</td>
             <td>{{item.note}}</td>
-            <td>{{item.created}}</td>
-            <td>{{item.updated}}</td>
+            <td>{{item.created | ellipsis }}</td>
+            <td>{{item.updated | ellipsis }}</td>
         </tr>
         </tbody>
     </table>
@@ -52,6 +52,17 @@
                 .then((res) => {
                     this.list = res.data.data;
                 })
+        },
+        filters: {
+            ellipsis(value) {
+                if (!value) {
+                    return '';
+                }
+                if (value.length > 10) {
+                    return value.slice(0, 10)
+                }
+                return value
+            }
         }
     })
 </script>
